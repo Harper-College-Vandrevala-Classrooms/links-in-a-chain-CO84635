@@ -1,4 +1,4 @@
-package main.java.com.csc;
+package com.csc;
 
 public class LinksInAChain {
 
@@ -15,7 +15,18 @@ public class LinksInAChain {
     static class LinkedList {
         Node head;
 
+        private int size() {
+            int size = 0;
+            Node current = head;
+            while (current != null) {
+                size++;
+                current = current.next;
+            }
+            return size;
+        }
+
         public void add(ChainLink data){
+            
             Node newNode = new Node(data);
             if (head == null) {
                 head = newNode;
@@ -29,6 +40,10 @@ public class LinksInAChain {
         }
 
         public ChainLink get(int index) {
+            if (index < 0 || index >= size()) {
+                return null;
+            }
+
             Node current = head;
             for (int i = 0; i < index; i++) {
                 current = current.next;
