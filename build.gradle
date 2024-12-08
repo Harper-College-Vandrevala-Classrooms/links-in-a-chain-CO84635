@@ -46,4 +46,4 @@ standardInput = System.in
 
 
 
-mainClassName = 'csc.LinksInAChain'
+mainClassName = 'com.csc.LinksInAChain'
