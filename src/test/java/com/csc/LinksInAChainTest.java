@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 class LinksInAChainTest {
 
-    LinksInAChain.LinkedList links;
+    LinksInAChain.LinkedList<LinksInAChain.ChainLink> links;
 
     @BeforeEach
     void setup(){
-        links = new LinksInAChain.LinkedList();
+        links = new LinksInAChain.LinkedList<>();
     }
 
     @Test

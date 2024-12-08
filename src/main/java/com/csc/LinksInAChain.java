@@ -2,22 +2,22 @@ package com.csc;
 
 public class LinksInAChain {
 
-    static class Node {
-        ChainLink data;
-        Node next;
+    static class Node<T> {
+        T data;
+        Node<T> next;
 
-        Node(ChainLink data) {
+        Node(T data) {
             this.data = data;
             this.next = null;
         }
     }
 
-    static class LinkedList {
-        Node head;
+    static class LinkedList<T> {
+        Node<T> head;
 
         private int size() {
             int size = 0;
-            Node current = head;
+            Node<T> current = head;
             while (current != null) {
                 size++;
                 current = current.next;
@@ -25,13 +25,13 @@ public class LinksInAChain {
             return size;
         }
 
-        public void add(ChainLink data){
+        public void add(T data){
             
-            Node newNode = new Node(data);
+            Node<T> newNode = new Node<>(data);
             if (head == null) {
                 head = newNode;
             } else {
-                Node current = head;
+                Node<T> current = head;
                 while (current.next != null) {
                     current = current.next;
                 }
@@ -39,12 +39,12 @@ public class LinksInAChain {
             }
         }
 
-        public ChainLink get(int index) {
+        public T get(int index) {
             if (index < 0 || index >= size()) {
                 return null;
             }
 
-            Node current = head;
+            Node<T> current = head;
             for (int i = 0; i < index; i++) {
                 current = current.next;
             }
@@ -61,7 +61,7 @@ public class LinksInAChain {
     }
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
+        LinkedList<ChainLink> linkedList = new LinkedList<>();
 
         ChainLink linkOne = new ChainLink("red");
         ChainLink linkTwo = new ChainLink("blue");
