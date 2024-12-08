@@ -27,6 +27,11 @@ public class LinksInAChain {
 
         public int size(Node<T> node) {
             int size = 0;
+
+            if (node == null){
+                return 0;
+            }
+            
             Node<T> current = node.next;
 
             while (current != null) {
